@@ -1,24 +1,22 @@
 const skillCategories = [
   {
     title: "Programming Languages",
-    skills: ["Python", "JavaScript", "SQL", "HTML", "CSS"],
+    skills: ["Python", "SQL", "HTML", "CSS", "Javascript"],
   },
   {
     title: "Frameworks & Libraries",
-    skills: ["Flask", "SQLAlchemy", "Pandas", "NumPy", "Jinja2"],
+    skills: ["Flask", "Pandas", "NumPy",],
   },
   {
     title: "Tools & Platforms",
-    skills: ["Git", "GitHub", "VS Code", "Postman", "Render", "Railway", "Vercel"],
+    skills: ["Git", "GitHub", "VS Code", "Render", "Vercel"],
   },
   {
     title: "Concepts & Methodologies",
     skills: [
-      "REST API Design",
-      "Database Design",
       "AI Integration",
       "Backend Development",
-      "Version Control",
+      "Object Oriented Programming",
       "Agile Basics",
     ],
   },
