@@ -27,13 +27,13 @@ const projects = [
       "A Buy Today Sell Tomorrow analysis tool that helps traders identify potential trading opportunities. Analyzes market patterns and provides actionable insights for short-term trading strategies.",
     techStack: ["Python", "Flask", "Pandas", "SQL", "REST API"],
     features: [
-      "BTST stock analysis",
-      "Pattern recognition",
-      "Historical data analysis",
-      "Trading recommendations",
+      "Analyse the Past 48 hours news and give prediction",
+      "Provides prediction for BTST based on the news",
+      "Historical news analysis and trading prediction",
+      "* please wait for 20 to 25 seconds it will take time to load *",
     ],
-    githubUrl: "https://github.com/santoshneelappa/trading-analyzer",
-    liveUrl: "", // Add your Render/Railway URL here
+    githubUrl: "https://github.com/santoshneelappagol07/news.py",
+    liveUrl: "https://btst-trade-analyze-py.onrender.com/",
   },
   {
     title: "Portfolio Backend API",
@@ -119,9 +119,22 @@ export function Projects() {
                     )}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
+                {project.liveUrl ? (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors hover:underline cursor-pointer">
+                      {project.title}
+                    </h3>
+                  </a>
+                ) : (
+                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                )}
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
