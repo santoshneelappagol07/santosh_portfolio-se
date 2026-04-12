@@ -10,8 +10,8 @@ const socialLinks = [
   {
     icon: Mail,
     label: "Email",
-    href: "mailto:santosh.neelappagol@example.com", // Update with your email
-    value: "santosh.neelappagol@example.com",
+    href: "mailto:santoshneelappagol6341@gmail.com", // Update with your email
+    value: "santoshneelappagol6341@gmail.com",
   },
   {
     icon: Github,
@@ -56,7 +56,7 @@ export function Contact() {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Interested in working together? Feel free to reach out for collaborations, 
+            Interested in working together? Feel free to reach out for collaborations,
             opportunities, or just to say hello.
           </p>
         </div>
@@ -93,7 +93,7 @@ export function Contact() {
             <div className="p-6 bg-primary/5 border border-primary/20 rounded-xl">
               <p className="text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">Response Time:</span>{" "}
-                I typically respond within 24-48 hours. For urgent matters, 
+                I typically respond within 24-48 hours. For urgent matters,
                 please reach out via LinkedIn.
               </p>
             </div>
