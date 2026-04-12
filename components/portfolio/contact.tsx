@@ -31,19 +31,42 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
+  const [error, setError] = useState<string | null>(null)
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission - Replace with your actual form handling
-    // You can integrate with Formspree, EmailJS, or your own backend
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      subject: formData.get("subject") as string,
+      message: formData.get("message") as string,
+    }
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
 
-    // Reset form after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000)
+      if (!response.ok) {
+        throw new Error("Failed to send message")
+      }
+
+      setIsSubmitted(true)
+      e.currentTarget.reset()
+
+      // Reset form after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000)
+    } catch {
+      setError("Failed to send message. Please try again or email me directly.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -180,6 +203,12 @@ export function Contact() {
                     required
                   />
                 </div>
+
+                {error && (
+                  <div className="p-3 bg-red-900/30 border border-red-500/50 rounded-lg text-red-400 text-sm">
+                    {error}
+                  </div>
+                )}
 
                 <Button type="submit" className="w-full gap-2" disabled={isSubmitting}>
                   {isSubmitting ? (
