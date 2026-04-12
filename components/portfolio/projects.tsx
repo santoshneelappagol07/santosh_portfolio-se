@@ -46,8 +46,8 @@ const projects = [
       "Input validation",
       "Error handling",
     ],
-    githubUrl: "https://github.com/santoshneelappa/portfolio-api",
-    liveUrl: "https://github.com/santoshneelappagol07/santosh_portfolio-se/tree/main", // Add your Render/Railway URL here
+    githubUrl: "https://github.com/santoshneelappagol07/santosh_portfolio-se/tree/main",
+    liveUrl: "https://santoshneelappagol07-santoshportfol-ten.vercel.app/", // Add your Render/Railway URL here
   },
   {
     title: "SQL Query Optimizer",
