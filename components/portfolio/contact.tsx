@@ -16,14 +16,14 @@ const socialLinks = [
   {
     icon: Github,
     label: "GitHub",
-    href: "https://github.com/santoshneelappa",
-    value: "github.com/santoshneelappa",
+    href: "https://github.com/santoshneelappagol07",
+    value: "github.com/santoshneelappagol07",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://linkedin.com/in/santoshneelappagol", // Update with your LinkedIn
-    value: "linkedin.com/in/santoshneelappagol",
+    href: "https://www.linkedin.com/in/santosh-neelappagol-sbn2001",
+    value: "linkedin.com/in/santosh-neelappagol-sbn2001",
   },
 ]
 
@@ -73,9 +73,9 @@ export function Contact() {
                   <a
                     key={link.label}
                     href={link.href}
-                    target={link.label !== "Email" ? "_blank" : undefined}
-                    rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
-                    className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors group"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors group cursor-pointer"
                   >
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <link.icon className="w-5 h-5 text-primary" />

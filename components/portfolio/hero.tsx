@@ -42,7 +42,7 @@ export function Hero() {
           </Button>
           <Button asChild variant="ghost" size="lg" className="gap-2">
             <a
-              href="https://github.com/santoshneelappa"
+              href="https://github.com/santoshneelappagol07"
               target="_blank"
               rel="noopener noreferrer"
             >

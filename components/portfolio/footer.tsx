@@ -3,12 +3,12 @@ import { Github, Linkedin, Mail, Heart } from "lucide-react"
 const socialLinks = [
   {
     icon: Github,
-    href: "https://github.com/santoshneelappa",
+    href: "https://github.com/santoshneelappagol07",
     label: "GitHub",
   },
   {
     icon: Linkedin,
-    href: "https://linkedin.com/in/santoshneelappagol",
+    href: "https://www.linkedin.com/in/santosh-neelappagol-sbn2001",
     label: "LinkedIn",
   },
   {

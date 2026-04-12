@@ -36,7 +36,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="https://github.com/santoshneelappa"
+              href="https://github.com/santoshneelappagol07"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -70,7 +70,7 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href="https://github.com/santoshneelappa"
+                href="https://github.com/santoshneelappagol07"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
