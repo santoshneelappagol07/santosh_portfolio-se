@@ -18,8 +18,8 @@ const projects = [
       "API key authentication",
       "Real-time generation",
     ],
-    githubUrl: "https://github.com/santoshneelappa/ai-script-generator",
-    liveUrl: "", // Add your Render/Railway URL here
+    githubUrl: "https://github.com/santoshneelappagol07/the-video-script-generator-",
+    liveUrl: "https://the-video-script-generator.vercel.app/index.html#generator", // Add your Render/Railway URL here
   },
   {
     title: "Trading Analyzer (BTST Tool)",
