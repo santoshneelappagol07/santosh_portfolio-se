@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(23.573% 0.08656 27.051);
+  --background: oklch(0 0 0);
   /* pure black */
   --foreground: oklch(1 0 0);
   /* pure white */
