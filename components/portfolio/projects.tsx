@@ -47,7 +47,7 @@ const projects = [
       "Error handling",
     ],
     githubUrl: "https://github.com/santoshneelappa/portfolio-api",
-    liveUrl: "", // Add your Render/Railway URL here
+    liveUrl: "https://github.com/santoshneelappagol07/santosh_portfolio-se/tree/main", // Add your Render/Railway URL here
   },
   {
     title: "SQL Query Optimizer",
