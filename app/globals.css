@@ -415,7 +415,6 @@
     oklch(72% 0.18 180),
     oklch(65% 0.18 220)
   );
-  animation: gradientRotate 3s linear infinite;
 }
 
 .gradient-ring::before {
