@@ -5,7 +5,7 @@ import { ArrowRight, Github, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
-const roles = ["Python Developer", "AI Builder", "Backend Engineer", "Problem Solver"]
+const roles = ["Python Developer", "Backend Engineer", "SQL Developer"]
 
 function TypingAnimation() {
   const [roleIndex, setRoleIndex] = useState(0)
