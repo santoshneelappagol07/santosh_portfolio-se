@@ -52,12 +52,6 @@ export function Resume() {
                   <span className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
                     📄 PDF Format
                   </span>
-                  <span className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
-                    ✅ Up to Date
-                  </span>
-                  <span className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
-                    🎯 ATS Friendly
-                  </span>
                 </div>
               </div>
 
