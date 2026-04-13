@@ -5,12 +5,13 @@ import { Mail, Github, Linkedin, Send, Loader2, CheckCircle } from "lucide-react
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const socialLinks = [
   {
     icon: Mail,
     label: "Email",
-    href: "mailto:santoshneelappagol6341@gmail.com", // Update with your email
+    href: "mailto:santoshneelappagol6341@gmail.com",
     value: "santoshneelappagol6341@gmail.com",
   },
   {
@@ -30,8 +31,9 @@ const socialLinks = [
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
-
   const [error, setError] = useState<string | null>(null)
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation()
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -59,8 +61,6 @@ export function Contact() {
 
       setIsSubmitted(true)
       e.currentTarget.reset()
-
-      // Reset form after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000)
     } catch {
       setError("Failed to send message. Please try again or email me directly.")
@@ -73,39 +73,51 @@ export function Contact() {
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-600 ${
+            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Get In Touch
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className={`w-20 h-1 bg-primary mx-auto rounded-full mb-4 transition-all duration-700 delay-200 ${
+            headerVisible ? "scale-x-100" : "scale-x-0"
+          }`} />
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
             Interested in working together? Feel free to reach out for collaborations,
             opportunities, or just to say hello.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div
+          ref={contentRef}
+          className={`grid lg:grid-cols-2 gap-8 sm:gap-12 transition-all duration-700 ${
+            contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-6">
                 Contact Information
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {socialLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors group cursor-pointer"
+                    className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300 group cursor-pointer hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5"
                   >
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                       <link.icon className="w-5 h-5 text-primary" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-sm text-muted-foreground">{link.label}</p>
-                      <p className="text-foreground font-medium">{link.value}</p>
+                      <p className="text-foreground font-medium text-sm sm:text-base truncate">{link.value}</p>
                     </div>
                   </a>
                 ))}
@@ -113,23 +125,22 @@ export function Contact() {
             </div>
 
             {/* Quick note */}
-            <div className="p-6 bg-primary/5 border border-primary/20 rounded-xl">
+            <div className="p-5 sm:p-6 bg-primary/5 border border-primary/20 rounded-xl">
               <p className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground"></span>{" "}
-                Thank you for reaching and Looking forward to connect
+                Thank you for reaching out. Looking forward to connecting!
               </p>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card p-8 rounded-xl border border-border">
+          <div className="bg-card p-6 sm:p-8 rounded-xl border border-border">
             <h3 className="text-xl font-semibold text-foreground mb-6">
               Send a Message
             </h3>
 
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
-                <div className="w-16 h-16 bg-green-900/30 rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-green-900/30 rounded-full flex items-center justify-center mb-4 animate-scale-in">
                   <CheckCircle className="w-8 h-8 text-green-400" />
                 </div>
                 <h4 className="text-lg font-semibold text-foreground mb-2">
@@ -140,7 +151,7 @@ export function Contact() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label
@@ -210,7 +221,7 @@ export function Contact() {
                   </div>
                 )}
 
-                <Button type="submit" className="w-full gap-2" disabled={isSubmitting}>
+                <Button type="submit" className="w-full gap-2 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all" disabled={isSubmitting}>
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
