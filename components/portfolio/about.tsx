@@ -59,8 +59,8 @@ export function About() {
             }`}
           >
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              I&apos;m a <span className="text-foreground font-medium">Python Developer</span> currently
-              pursuing my MCA, with a strong focus on backend development and AI applications.
+              I&apos;m a <span className="text-foreground font-medium">Python Developer</span>
+              completed MCA in 2025, with a strong focus on backend development and AI applications.
               My approach is practical and results-driven—I build solutions that solve real problems.
             </p>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
